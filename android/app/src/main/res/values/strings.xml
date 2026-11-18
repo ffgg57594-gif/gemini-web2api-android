@@ -49,6 +49,9 @@
         <item>gemini-flash-lite</item>
     </string-array>
 
+    <string name="link_account_header">ربط حساب Gemini</string>
+    <string name="link_account_btn">ربط حساب Gemini</string>
+    <string name="link_account_hint">يفتح gemini.google.com في المتصفح. سجّل الدخول هناك، ثم استخدم «مشاركة» لاستيراد الجلسة (أو الصق Cookies يدويًا أدناه).</string>
     <string name="cookie_header">cookie.txt（نماذج Pro）</string>
     <string name="cookie_hint">الصق cookie بصيغة SID=…; HSID=…; __Secure-1PSID=…، يُطبَّق فور الحفظ دون إعادة تشغيل.</string>
     <string name="save_cookie">حفظ Cookie</string>

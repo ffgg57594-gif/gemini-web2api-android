@@ -107,6 +107,24 @@ class MainActivity : Activity() {
             }
         }
 
+        findViewById<Button>(R.id.linkAccountBtn).setOnClickListener {
+            try {
+                startActivity(
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://gemini.google.com/"))
+                        .setPackage("com.android.chrome")
+                )
+            } catch (_: Exception) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://gemini.google.com/")))
+            }
+        }
+
+        // Import cookies shared from browser/extension via Share Intent.
+        intent?.getStringExtra(Intent.EXTRA_TEXT)?.let { shared ->
+            if (shared.contains("SID=") || shared.contains("HSID=")) {
+                cookieEdit.setText(shared.trim())
+            }
+        }
+
         testBtn.setOnClickListener { runSelfTest() }
 
         findViewById<Button>(R.id.clearLogBtn).setOnClickListener {
