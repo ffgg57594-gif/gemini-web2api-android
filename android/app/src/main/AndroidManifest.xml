@@ -13,7 +13,9 @@
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.GeminiWeb2Api"
         android:usesCleartextTraffic="true"
-        android:allowBackup="true">
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:layoutDirection="rtl">
 
         <activity
             android:name=".MainActivity"
