@@ -118,6 +118,20 @@ class MainActivity : Activity() {
             }
         }
 
+        findViewById<Button>(R.id.importFileBtn).setOnClickListener {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "*/*"
+            }
+            startActivityForResult(intent, 42)
+        }
+
+        findViewById<Button>(R.id.clearSessionBtn).setOnClickListener {
+            writeUiFile(File(filesDir, "cookie.txt"), "")
+            cookieEdit.setText("")
+            Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show()
+        }
+
         // Import cookies shared from browser/extension via Share Intent.
         intent?.getStringExtra(Intent.EXTRA_TEXT)?.let { shared ->
             if (shared.contains("SID=") || shared.contains("HSID=")) {
@@ -305,6 +319,18 @@ class MainActivity : Activity() {
     } catch (e: Exception) {
         Toast.makeText(this, getString(R.string.save_failed, e.message), Toast.LENGTH_LONG).show()
         false
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 42 && resultCode == RESULT_OK) {
+            data?.data?.let { uri ->
+                try {
+                    val text = contentResolver.openInputStream(uri)?.bufferedReader()?.use { it.readText() } ?: ""
+                    if (text.isNotBlank()) cookieEdit.setText(text.trim())
+                } catch (_: Exception) { }
+            }
+        }
     }
 
     private fun requestNotificationPermissionIfNeeded() {

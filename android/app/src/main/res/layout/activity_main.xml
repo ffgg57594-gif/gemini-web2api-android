@@ -215,6 +215,20 @@
             android:layout_marginTop="4dp"
             android:text="@string/link_account_btn" />
 
+        <Button
+            android:id="@+id/importFileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/import_file_btn" />
+
+        <Button
+            android:id="@+id/clearSessionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/clear_session_btn" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

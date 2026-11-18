@@ -51,6 +51,12 @@
 
     <string name="link_account_header">ربط حساب Gemini</string>
     <string name="link_account_btn">ربط حساب Gemini</string>
+    <string name="import_cookie_btn">استيراد Cookies</string>
+    <string name="import_file_btn">استيراد ملف</string>
+    <string name="validate_cookie_btn">اختبار الاتصال</string>
+    <string name="clear_session_btn">حذف الجلسة</string>
+    <string name="session_status_ok">الجلسة صالحة</string>
+    <string name="session_status_bad">الجلسة غير صالحة أو منتهية</string>
     <string name="link_account_hint">يفتح gemini.google.com في المتصفح. سجّل الدخول هناك، ثم استخدم «مشاركة» لاستيراد الجلسة (أو الصق Cookies يدويًا أدناه).</string>
     <string name="cookie_header">cookie.txt（نماذج Pro）</string>
     <string name="cookie_hint">الصق cookie بصيغة SID=…; HSID=…; __Secure-1PSID=…، يُطبَّق فور الحفظ دون إعادة تشغيل.</string>
